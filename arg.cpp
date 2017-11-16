@@ -1,3 +1,3 @@
-double arg(const complex c) const {
+double arg(const complex c) {
       return std::atan(c.b/c.a);
     }
