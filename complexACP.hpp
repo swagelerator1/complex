@@ -1,8 +1,13 @@
-#include "complex.cpp"
-#include "abs.cpp"
-#include "arg.cpp"
+//defaults
 #include <iostream>
 #include <math.h>
+
+//base
+#include "complex.cpp"
+
+//methods
+#include "abs.cpp"
+#include "arg.cpp"
 #include "log.cpp"
 #include "imag.cpp"
 #include "log10.cpp"
