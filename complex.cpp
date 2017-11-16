@@ -33,43 +33,6 @@ class complex {
 			}
 			return str;
 		}
-    
-    double abs(const complex c) const {
-      return sqrt(std::pow(c.a, 2) + std::pow(c.b, 2));
-    }
-    
-    double imag(const complex& c) {
-      return c.b;
-    }
-    
-    double real(const complex& c) {
-      return c.a;
-    }
-    
-    double arg(const complex c) const {
-      return std::atan(c.b/c.a);
-    }
-    
-    complex pow(double ba, const complex ex) const {
-      const complex i(0, 1);
-      complex c(std::pow(ba, ex.a)*std::cos(ex.b*std::log(ba)));
-      c += i*std::pow(ba, ex.a)*std::sin(ex.b*std::log(ba));
-      return c;
-    }
-    
-    complex pow(const complex& c, int ex) const {
-      complex h = c;
-      for(int x = 0; x < ex-1; x++) h = c*h;
-      return h;
-    }
-    
-    complex log(const complex c) const {
-      return complex(std::log(c.abs(c)), c.arg(c));
-    }
-    
-    complex log10(const complex c) const {
-      return log(c)/std::log(10);
-    }
 
     complex operator*(const complex& c) const {
       double na = this->a*c.a - this->b*c.b;
@@ -121,9 +84,3 @@ ostream& operator <<(ostream& os, const complex& c) {
         cout << y.dtos(c.a) + " + " + y.dtos(c.b) + "i"; 
       }
 
-int main() {
-  complex c(3, 4);
-  complex co(5, 3);
-  c += co;
-  cout << c;
-}
