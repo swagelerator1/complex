@@ -1,3 +1,3 @@
-complex log(const complex c) const {
-      return complex(std::log(c.abs(c)), c.arg(c));
+complex log(const complex c)  {
+      return complex(std::log(abs(c)), arg(c));
     }
