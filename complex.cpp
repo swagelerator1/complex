@@ -16,36 +16,47 @@ class complex {
       b = 0;
     }
     
-    string dtos(double d) {	
-			string str = "";
-			if(d < 0) {
-			  str = "-";
-			  d *= -1;
-			}
-			int a = (int) std::log10(d);
-			int cnt = 0;
-			while(d != 0) {
-				str += (char) 48 + ((int) d/(std::pow(10, (double) a)));
-				d = fmod(d, std::pow(10, (double) a));
-				cnt++;
-				if(cnt == a+1) str += '.';
-				d*= 10;
-			}
-			return str;
-		}
-
-    complex operator*(const complex& c) const {
-      double na = this->a*c.a - this->b*c.b;
-      double nb = this->a*c.b + this->b*c.a;
+    complex operator+(const complex& c) {
+      double na = this->a + c.a;
+      double nb = this->b + c.b;
       return complex(na, nb);
     }
     
-    complex operator*(double d) const {
+    complex operator+(double d) {
+      double na = this->a + d;
+      return complex(na, this->b);
+    }
+    
+    complex operator-(const complex& c) {
+      double na = this->a - c.a;
+      double nb = this->b - c.b;
+      return complex(na, nb);
+    }
+    
+    complex operator-(double d) {
+      double na = this->a - d;
+      return complex(na, this->b);
+    }
+    
+    complex operator*(const complex& c) const {
+      double na = a*c.a - b*c.b;
+      double nb = a*c.b + b*c.a;
+      return complex(na, nb);
+    }
+    
+    complex operator*(const double d)  {
       return complex(this->a*d, this->b*d);
     }
     
-    complex operator/(double d) const {
+    complex operator/(const double d)  {
       return complex(this->a/d, this->b/d);
+    }
+    
+    complex operator/(const complex& c) {
+            complex i(0, 1);
+            complex o(this->a, this->b);
+            o *= pow(c, -1.0);
+            return o;
     }
     
     complex operator=(const complex& c) {
@@ -58,18 +69,32 @@ class complex {
       this->b += c.b;
     }
     
+    complex operator+=(double d) {
+      this->a += d;
+    }
+    
     complex operator-=(const complex& c) {
       this->a -= c.a;
       this-> b -= c.b;
     }
     
-    complex operator*=(const complex& c) const {
-      double na = this->a*c.a - this->b*c.b;
-      double nb = this->a*c.b + this->b*c.a;
-      return complex(na, nb);
+    complex operator-=(double d) {
+      this->a -= d;
     }
     
-    complex operator/=(const complex& c) const {
+    complex operator*=(const complex& c) {
+      double na = this->a*c.a - this->b*c.b;
+      double nb = this->a*c.b + this->b*c.a;
+      this->a = na;
+      this->b = nb;
+    }
+    
+    complex operator*=(double d) {
+      this->a *= d;
+      this->b *= d;
+    }
+    
+    complex operator/=(const complex& c) {
       complex ct = c;
       ct.b *= -1;
       complex ca(this->a, this->b);
@@ -77,10 +102,24 @@ class complex {
       ct *= c;
       return(ca/ct.a);
     }
+    
+    complex operator/=(double d) {
+      this->a /= d;
+      this->b /= d;
+    }
+    
+    bool operator==(const complex& c) {
+      if(this->a == c.a && this->b == c.b) return true;
+      return false;
+    }
+    
+    bool operator!=(const complex& c) {
+      if(this->a != c.a || this->b != c.b) return true;
+      return false;
+    }
 };
 
 ostream& operator <<(ostream& os, const complex& c) {
-        complex y(0, 0);
-        cout << y.dtos(c.a) + " + " + y.dtos(c.b) + "i"; 
+        cout << c.a << " + "  << c.b << "i"; 
       }
 
