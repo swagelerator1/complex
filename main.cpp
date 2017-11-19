@@ -11,9 +11,9 @@ int main() {
   c *= co;
 
   //test methods
-  cout << abs(c) << endl;
-  cout << arg(c) << endl;
-  cout << log(c) << endl;
+  cout << c.abs(c) << endl;
+  cout << c.arg(c) << endl;
+  cout << c.log(c) << endl;
 
   //end
   return 0;
