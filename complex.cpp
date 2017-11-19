@@ -1,6 +1,6 @@
 #include <iostream>
 #include <math.h>
-
+#include "pow.h"
 using namespace std;
 
 class complex {
@@ -15,7 +15,7 @@ class complex {
       a = aa;
       b = 0;
     }
-    
+	
     complex operator+(const complex& c) {
       double na = this->a + c.a;
       double nb = this->b + c.b;
