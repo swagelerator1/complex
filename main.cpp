@@ -8,10 +8,10 @@ int main() {
   complex co(5, 3);
   
   //test *= overload
-  c *= co;
+  //c *= co;
 
   //test methods
-  cout << c.abs(c) << endl;
+  cout << imag(c) << endl;
   cout << c.arg(c) << endl;
   cout << c.log(c) << endl;
 
