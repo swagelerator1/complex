@@ -1,13 +1,13 @@
 #include "complex.h"
 
-complex complex::pow(double ba, const complex ex) { 
+complex pow(double ba, const complex ex) { 
       const complex i(0, 1);
-      complex c(std::pow(ba, ex.a)*std::cos(ex.b*std::log(ba)));
-      c += i*std::pow(ba, ex.a)*std::sin(ex.b*std::log(ba));
+      complex c(pow(ba, ex.a)*cos(ex.b*log(ba)));
+      c += i*pow(ba, ex.a)*sin(ex.b*log(ba));
       return c;
     }
 
-complex complex::pow(const complex& c, int ex) {
+complex pow(const complex& c, int ex) {
   complex h = c;
   bool neg = false;
   if(ex < 0) { neg = true; ex*=-1; }
@@ -17,12 +17,12 @@ complex complex::pow(const complex& c, int ex) {
   return h;
 }
 
-complex complex::pow(const complex& c, double ex) { 
+complex pow(const complex& c, double ex) { 
   complex i(0, 1);
-  return complex(std::pow(abs(c), ex))*complex::pow(M_E, i*complex(ex)*arg(c));
+  return complex(pow(abs(c), ex))*pow(M_E, i*complex(ex)*arg(c));
 }
 
-complex complex::pow(const complex& ba, const complex& ex) {
+complex pow(const complex& ba, const complex& ex) {
   const complex i(0, 1);
-  return complex::pow(M_E, (ex*complex::log(complex::abs(ba)))+(i*complex::arg(ba)*ex));
+  return pow(M_E, (ex*log(abs(ba)))+(i*arg(ba)*ex));
 }

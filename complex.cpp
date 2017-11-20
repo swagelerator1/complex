@@ -50,7 +50,7 @@ complex complex::operator/(const double d)  {
 complex complex::operator/(const complex& c) {
 		complex i(0, 1);
 		complex o(this->a, this->b);
-		o *= complex::pow(c, -1.0);
+		o *= pow(c, -1.0);
 		return o;
 }
 

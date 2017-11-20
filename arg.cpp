@@ -1,4 +1,4 @@
 #include "complex.h"
-double complex::arg(const complex c) {
-      return std::atan(c.b/c.a);
+double arg(const complex c) {
+      return atan(c.b/c.a);
     }

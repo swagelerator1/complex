@@ -1,4 +1,4 @@
 #include "complex.h"
-complex complex::log(const complex c)  {
-      return complex(std::log(abs(c)), arg(c));
+complex log(const complex c)  {
+      return complex(log(abs(c)), arg(c));
     }

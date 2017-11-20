@@ -1,4 +1,4 @@
 #include "complex.h"
-complex complex::sqrt(const complex& c) {
-	return (c + (complex::abs(c)))*std::sqrt(complex::abs(c))/(complex::abs(c + complex::abs(c)));
+complex sqrt(const complex& c) {
+	return (c + (abs(c)))*sqrt(abs(c))/(abs(c + abs(c)));
 }

@@ -11,9 +11,10 @@ int main() {
   //c *= co;
 
   //test methods
+  cout << arg(c) << endl;
+  cout << log(c) << endl;
   cout << imag(c) << endl;
-  cout << c.arg(c) << endl;
-  cout << c.log(c) << endl;
+
 
   //end
   return 0;
