@@ -22,6 +22,10 @@ complex complex::operator+(double d) {
   return complex(na, this->b);
 }
 
+complex operator+(double d, const complex& c) {
+	return complex(c.a+d, c.b);
+}
+
 complex complex::operator-(const complex& c) {
   double na = this->a - c.a;
   double nb = this->b - c.b;
@@ -31,6 +35,10 @@ complex complex::operator-(const complex& c) {
 complex complex::operator-(double d) {
   double na = this->a - d;
   return complex(na, this->b);
+}
+
+complex operator-(double d, const complex& c) {
+	return complex(d-c.a, d-c.b);
 }
 
 complex complex::operator*(const complex& c) {
@@ -43,6 +51,10 @@ complex complex::operator*(const double d)  {
   return complex(this->a*d, this->b*d);
 }
 
+complex operator*(double d, const complex& c) {
+	return complex(c.a*d, c.b*d);
+}
+
 complex complex::operator/(const double d)  {
   return complex(this->a/d, this->b/d);
 }
@@ -52,6 +64,10 @@ complex complex::operator/(const complex& c) {
 		complex o(this->a, this->b);
 		o *= pow(c, -1.0);
 		return o;
+}
+
+complex operator/(double d, const complex& c) {
+	return d*pow(c, -1);
 }
 
 complex complex::operator=(const complex& c) {

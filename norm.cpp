@@ -1,5 +1,4 @@
+#include "complex.h"
 double norm(const complex& c) {
-
-      return std::sqrt((c*conj(c)).a);
-
+      return sqrt((c*conj(c)).a);
     }
