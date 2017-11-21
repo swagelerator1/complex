@@ -11,13 +11,13 @@ complex::complex(double aa) {
   b = 0;
 }
 
-complex complex::operator+(const complex& c) {
+complex complex::operator+(const complex& c) const {
   double na = this->a + c.a;
   double nb = this->b + c.b;
   return complex(na, nb);
 }
 
-complex complex::operator+(double d) {
+complex complex::operator+(double d) const {
   double na = this->a + d;
   return complex(na, this->b);
 }
@@ -26,13 +26,13 @@ complex operator+(double d, const complex& c) {
 	return complex(c.a+d, c.b);
 }
 
-complex complex::operator-(const complex& c) {
+complex complex::operator-(const complex& c) const {
   double na = this->a - c.a;
   double nb = this->b - c.b;
   return complex(na, nb);
 }
 
-complex complex::operator-(double d) {
+complex complex::operator-(double d) const {
   double na = this->a - d;
   return complex(na, this->b);
 }
@@ -41,25 +41,25 @@ complex operator-(double d, const complex& c) {
 	return complex(d-c.a, d-c.b);
 }
 
-complex complex::operator*(const complex& c) {
+complex complex::operator*(const complex& c) const {
   double na = a*c.a - b*c.b;
   double nb = a*c.b + b*c.a;
   return complex(na, nb);
 }
 
-complex complex::operator*(const double d)  {
+complex complex::operator*(double d) const {
   return complex(this->a*d, this->b*d);
 }
 
-complex operator*(double d, const complex& c) {
+complex operator*(double d, const complex& c) { 
 	return complex(c.a*d, c.b*d);
 }
 
-complex complex::operator/(const double d)  {
+complex complex::operator/(double d)  const {
   return complex(this->a/d, this->b/d);
 }
 
-complex complex::operator/(const complex& c) {
+complex complex::operator/(const complex& c) const {
 		complex i(0, 1);
 		complex o(this->a, this->b);
 		o *= pow(c, -1.0);

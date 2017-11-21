@@ -9,14 +9,14 @@ class complex {
 	complex(double aa, double bb);
     complex(double aa);
 
-    complex operator+(const complex& c);
-    complex operator+(double d);
-    complex operator-(const complex& c);
-    complex operator-(double d);
-    complex operator*(const complex& c);
-    complex operator*(const double d);
-    complex operator/(const double d);
-    complex operator/(const complex& c);
+    complex operator+(const complex& c) const;
+    complex operator+(double d) const;
+    complex operator-(const complex& c) const;
+    complex operator-(double d) const;
+    complex operator*(const complex& c) const;
+    complex operator*(double d) const;
+    complex operator/(double d) const;
+    complex operator/(const complex& c) const;
     complex operator=(const complex& c);
     complex operator+=(const complex& c);
     complex operator+=(double d);
