@@ -64,4 +64,8 @@ complex asin(const complex c);
 complex acos(const complex c);
 complex atan(const complex c);
 
+complex sinh(const complex& c);
+complex cosh(const complex& c);
+complex tanh(const complex& c);
+
 #endif

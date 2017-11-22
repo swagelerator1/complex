@@ -11,7 +11,7 @@ complex pow(const complex& c, int ex) {
   complex h = c;
   bool neg = false;
   if(ex < 0) { neg = true; ex*=-1; }
-  if(ex = 0) return complex(1);
+  if(ex == 0) return complex(1);
   else for(int x = 0; x < ex-1; x++) h = c*h; 
   if(neg) h = complex(1)/h;
   return h;

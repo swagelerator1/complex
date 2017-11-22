@@ -130,5 +130,6 @@ bool complex::operator!=(const complex& c) {
 }
 
 ostream& operator <<(ostream& os, const complex& c) {
-        cout << c.a << " + "  << c.b << "i"; 
+        if(c.b < 0) cout << c.a << " - " << -c.b << "i";
+		else cout << c.a << " + "  << c.b << "i"; 
       }

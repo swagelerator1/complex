@@ -1,4 +1,5 @@
 #include "complex.h"
 complex tan(const complex c) { //sin(theta)/cos(theta)
-      return(sin(c)/cos(c));
+      complex i(0, 1);
+	  return (exp(2*i*c)-1)/(i*(exp(2*i*c)+1));
     }
