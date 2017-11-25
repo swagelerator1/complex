@@ -8,13 +8,15 @@ int main() {
   complex co(5, 3);
   cout << "c = " << c << endl;
   cout << "co = " << co << endl << endl;
+  complex i(0, 1);
   
   //test methods
-  
+  cout << (log(1.0-i*c)-(log(1.0 + i*c))) << endl;
+  cout << (log(1.0 + complex(0,1)*c)) << endl;
   cout << "abs(c): " << abs(c) << endl;
   cout << "acos(c): " << acos(c) << endl;
   cout << "arg(c): " << arg(c) << endl;
-  cout << "asin(c): " << asin(c) << endl; //Wrong
+  cout << "asin(c): " << asin(c) << endl;
   cout << "atan(c): " << atan(c) << endl; //Wrong
   cout << "conj(c): " << conj(c) << endl;
   cout << "cos(c): " << cos(c) << endl;
@@ -27,7 +29,7 @@ int main() {
   cout << "polar(10, 45): " << polar(10.0, 45.0) << endl;
   cout << "pow(c, 2.0): " << pow(c, 2.0) << endl;
   cout << "pow(2.0, c): " << pow(2.0, c) << endl;
-  cout << "pow(c, 2): " << pow(c, 2) << endl;
+  cout << "pow(c, -1): " << pow(c, -1) << endl;
   cout << "pow(c, co):" << pow(c, co) << endl;
   cout << "real(c): " << real(c) << endl;
   cout << "sin(c): " << sin(c) << endl;

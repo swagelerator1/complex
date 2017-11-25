@@ -38,7 +38,7 @@ complex complex::operator-(double d) const {
 }
 
 complex operator-(double d, const complex& c) {
-	return complex(d-c.a, d-c.b);
+	return complex(d-c.a, -c.b);
 }
 
 complex complex::operator*(const complex& c) const {
