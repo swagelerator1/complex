@@ -4,6 +4,7 @@ using namespace std;
 
 int main() {
   //declare two complex numbers for testing
+  cout << "COMPLEX NUMBER VALUES" << endl << "---------------------" << endl;
   complex c(3, 4);
   complex co(5, 3);
   cout << "c = " << c << endl;
@@ -11,6 +12,7 @@ int main() {
   complex i(0, 1);
   
   //test methods
+  cout << endl << endl << "TEST ALL METHODS" << endl << "----------------" << endl;
   cout << (log(1.0-i*c)-(log(1.0 + i*c))) << endl;
   cout << (log(1.0 + complex(0,1)*c)) << endl;
   cout << "abs(c): " << abs(c) << endl;
@@ -41,6 +43,7 @@ int main() {
   //
   //test basic operator overloads
   //
+  cout << endl << endl << "BASIC OPERATOR OVERLOADS" << endl << "------------------------" << endl;
   cout << "c + co = " << c + co << endl;
   cout << "c - co = " << c - co << endl;
   cout << "c * co = " << c * co << endl;
@@ -57,6 +60,7 @@ int main() {
   //
   //test equality overloads
   //
+  cout << endl << endl << "EQUALITY OVERLOADS" << endl << "------------------" << endl;
   if(c == c) cout << "true" << endl;
   if (c != co) cout << "false" << endl;
 
