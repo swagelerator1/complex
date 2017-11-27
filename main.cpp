@@ -1,4 +1,4 @@
-#include "complexACP.hpp"
+#include "complexno.h"
 
 using namespace std;
 
@@ -8,7 +8,7 @@ int main() {
   complex c(3, 4);
   complex co(5, 3);
   cout << "c = " << c << endl;
-  cout << "co = " << co << endl << endl;
+  cout << "co = " << co << endl;
   complex i(0, 1);
   
   //test methods
