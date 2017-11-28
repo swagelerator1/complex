@@ -19,7 +19,7 @@ int main() {
   cout << "acos(c): " << acos(c) << endl;
   cout << "arg(c): " << arg(c) << endl;
   cout << "asin(c): " << asin(c) << endl;
-  cout << "atan(c): " << atan(c) << endl; //Wrong
+  cout << "atan(c): " << atan(c) << endl; 
   cout << "conj(c): " << conj(c) << endl;
   cout << "cos(c): " << cos(c) << endl;
   cout << "cosh(c): " << cosh(c) << endl; 
