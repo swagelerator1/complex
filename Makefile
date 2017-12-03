@@ -1,17 +1,14 @@
 CC=g++
 CFLAGS= -g
-LIBSRC = main.o
-OSMLIB = complexACP.a
-
-
+LIBSRC = complexno.cpp
+OSMLIB = complexno.a
 
 all: build clean
 
 build: main.o
-	$(CC) -o $(CFLAGS) main.cpp
-	ar rcs $ (OSMLIB) $(LIBSRC)
+	$(CC) -c $(LIBSRC)
+	ar rvs $(OSMLIB) complexno.o
 
 clean:
-	rm -f a.exe
-	rm -f a.exe.stackdump
 	rm -f *.o
+	rm -f *.a
