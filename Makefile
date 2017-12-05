@@ -11,4 +11,3 @@ build: main.o
 
 clean:
 	rm -f *.o
-	rm -f *.a
